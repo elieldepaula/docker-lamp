@@ -2,20 +2,21 @@
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.2
+* PHP 7.3
 * Apache 2.4
-* MySQL 5.7
+* MySQL 5.7 or MariaDB 10.3
 * phpMyAdmin
 
 ## Installation
 
-Clone this repository on your local computer and switch to branch `7.2.x`. Run the `docker-compose up -d`.
+Clone this repository on your local computer and switch to branch `7.3.x-magento`. Run the `bin/start`.
 
 ```shell
 git clone https://github.com/elieldepaula/docker-lamp.git
 cd docker-lamp/
 git fetch --all
-git checkout 7.2.x
+git checkout 7.3.x-magento
+cp sample.env .env
 docker-compose up -d
 ```
 
@@ -69,15 +70,23 @@ By default following modules are enabled.
 
 #### Connect via SSH
 
-You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
+You can connect to web server using `docker-compose exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker exec -it 7.2.x-webserver /bin/bash
+docker-compose exec webserver bash
 ```
+
+## Database
+
+There are following configuration variables available and you can customize them by overwritting in your own .env file.
+
+_**DATABASE**_
+
+Switch the database vendor from mysql to mariadb. You can also easily add additonal database versions. 
 
 ## PHP
 
-The installed version of PHP is 7.2
+The installed version of PHP is 7.3
 
 #### Extensions
 
@@ -109,3 +118,47 @@ password: tiger
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
+
+## Console commands
+
+Here are some useful commands for manage docker and Magento 2 projects.
+
+### Start docker
+
+``bin/start`` 
+
+### Stop docker
+
+``bin/stop`` 
+
+### Restart docker
+
+``bin/restart`` 
+
+### Show containers status
+
+``bin/status`` 
+
+### Open a container terminal
+
+``bin/container`` 
+
+### Execute commands into container terminal, ex: 
+
+``bin/console <some command>`` 
+
+Ex:
+
+``bin/console la -las``
+
+### Runs magento CLI commands
+
+``bin/mage <project> <magento command> <arguments>`` 
+
+Ex: 
+
+``bin/mage my_project module:enable some_module`` 
+
+### Logs
+
+``bin/logs``

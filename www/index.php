@@ -14,7 +14,7 @@
                         LAMP STACK
                     </h1>
                     <h2 class="subtitle">
-                        Your local development environment
+                        Your local development environment - Optimized for Magento 2
                     </h2>
                 </div>
             </div>
@@ -32,8 +32,7 @@
                                 <li>
                                     <?php
                                     $link = mysqli_connect("mysql", "root", "tiger", null);
-
-/* check connection */
+                                    /* check connection */
                                     if (mysqli_connect_errno()) {
                                         printf("MySQL connecttion failed: %s", mysqli_connect_error());
                                     } else {
@@ -55,6 +54,27 @@
                                 <li><a href="http://localhost/phpinfo.php">phpinfo()</a></li>
                                 <li><a href="http://localhost:8080">phpMyAdmin</a></li>
                                 <li><a href="http://localhost/test_db.php">Test DB Connection</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h3 class="title is-3 has-text-centered">Projects</h3>
+                        <hr>
+                        <div class="content">
+                            <ul>
+                                <?php
+                                /* list projects folders */
+                                $files = scandir(__DIR__);
+                                foreach ($files  as $row) {
+                                    echo is_dir($row) && !in_array($row, ['.', '..', 'assets']) ? '<li><a href="'.$row . '" target="_blank">' . $row . '</a>' : '';
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>

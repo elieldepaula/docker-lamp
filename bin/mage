@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $1 == "" ]
+then
+    echo "Você precisa informar a pasta do projeto."
+else
+    docker exec --user www-data 7.3.x-magento $1/bin/magento $2 $3 $4 $5
+fi

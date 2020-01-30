@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it 7.3.x-magento /bin/bash
