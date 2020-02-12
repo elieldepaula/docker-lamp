@@ -13,6 +13,7 @@ As of now, we have different branches for different PHP versions. Use appropriat
 * [7.2.x](https://github.com/elieldepaula/docker-lamp/tree/7.2.x)
 * [7.3.x](https://github.com/elieldepaula/docker-lamp/tree/7.3.x)
 * [7.3.x-magento](https://github.com/elieldepaula/docker-lamp/tree/7.3.x-magento)
+* [7.4.x](https://github.com/elieldepaula/docker-lamp/tree/7.4.x)
 
 ## Installation
 
@@ -22,7 +23,7 @@ Clone this repository on your local computer and checkout the appropriate branch
 git clone https://github.com/elieldepaula/docker-lamp.git
 cd docker-lamp/
 git fetch --all
-git checkout 7.3.x
+git checkout 7.4.x
 cp sample.env .env
 docker-compose up -d
 ```
