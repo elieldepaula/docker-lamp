@@ -2,7 +2,7 @@
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.3
+* PHP 7.4
 * Apache 2.4
 * MySQL 5.7 or MariaDB 10.3
 * phpMyAdmin
@@ -15,7 +15,7 @@ Clone this repository on your local computer and switch to branch `7.3.x-magento
 git clone https://github.com/elieldepaula/docker-lamp.git
 cd docker-lamp/
 git fetch --all
-git checkout 7.3.x-magento
+git checkout 7.4.x
 cp sample.env .env
 docker-compose up -d
 ```
