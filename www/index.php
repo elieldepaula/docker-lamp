@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
     <body>
-        <section class="hero is-medium is-info is-bold">
+        <section class="hero is-medium is-dark is-bold">
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
